@@ -26,7 +26,7 @@ import {
 } from 'lucide-react';
 
 export default function Home() {
-  const posUrl = process.env.NEXT_PUBLIC_POS_URL || 'http://localhost:3000';
+  const posUrl = process.env.NEXT_PUBLIC_POS_URL || 'https://sellalleswebsaas.loui-s.workers.dev';
 
   return (
     <div className="min-h-screen flex flex-col font-sans">
