@@ -48,7 +48,7 @@ export default function Home() {
             <a href={`${posUrl}/login`} className="hidden sm:inline-flex text-sm font-medium hover:text-primary transition-colors">
               Iniciar sesión
             </a>
-            <a href={`${posUrl}/login`} className="inline-flex items-center justify-center rounded-md bg-accent px-4 py-2 text-sm font-medium text-white shadow hover:bg-accent-hover transition-colors">
+            <a href={`${posUrl}/login?mode=register`} className="inline-flex items-center justify-center rounded-md bg-accent px-4 py-2 text-sm font-medium text-white shadow hover:bg-accent-hover transition-colors">
               Crear cuenta gratis
             </a>
           </div>
@@ -67,7 +67,7 @@ export default function Home() {
                 Vende, controla tu inventario y lleva tus cuentas desde la nube. Una o varias sucursales, sin instalar nada.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href={`${posUrl}/login`} className="inline-flex items-center justify-center rounded-lg bg-accent px-6 py-3 text-base font-medium text-white shadow-lg hover:bg-accent-hover transition-colors">
+                <a href={`${posUrl}/login?mode=register`} className="inline-flex items-center justify-center rounded-lg bg-accent px-6 py-3 text-base font-medium text-white shadow-lg hover:bg-accent-hover transition-colors">
                   Crear cuenta gratis
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
@@ -231,7 +231,7 @@ export default function Home() {
                   <li className="flex items-center gap-3 text-sm"><CheckCircle2 className="h-4 w-4 text-primary" /> Inventario completo</li>
                   <li className="flex items-center gap-3 text-sm"><CheckCircle2 className="h-4 w-4 text-primary" /> Sin tarjeta de crédito</li>
                 </ul>
-                <a href={`${posUrl}/login`} className="block w-full py-2.5 px-4 rounded-lg border-2 border-primary text-primary font-semibold text-center hover:bg-primary/5 transition-colors">
+                <a href={`${posUrl}/login?mode=register`} className="block w-full py-2.5 px-4 rounded-lg border-2 border-primary text-primary font-semibold text-center hover:bg-primary/5 transition-colors">
                   Iniciar prueba
                 </a>
               </div>
@@ -257,7 +257,7 @@ export default function Home() {
                   <li className="flex items-center gap-3 text-sm"><CheckCircle2 className="h-4 w-4 text-primary" /> Reportes avanzados</li>
                   <li className="flex items-center gap-3 text-sm"><CheckCircle2 className="h-4 w-4 text-primary" /> NCF Tradicional</li>
                 </ul>
-                <a href={`${posUrl}/login`} className="block w-full py-2.5 px-4 rounded-lg bg-accent text-white font-semibold text-center hover:bg-accent-hover transition-colors shadow-md">
+                <a href={`${posUrl}/login?mode=register`} className="block w-full py-2.5 px-4 rounded-lg bg-accent text-white font-semibold text-center hover:bg-accent-hover transition-colors shadow-md">
                   Empezar ahora
                 </a>
               </div>
@@ -317,7 +317,7 @@ export default function Home() {
              <p className="text-primary-foreground/90 text-lg md:text-xl mb-10 max-w-2xl mx-auto text-white">
                Únete a cientos de dueños de negocios en República Dominicana que ya están vendiendo más y mejor con SellAlleS.
              </p>
-             <a href={`${posUrl}/login`} className="inline-flex items-center justify-center rounded-lg bg-accent px-8 py-4 text-lg font-bold text-white shadow-xl hover:bg-accent-hover hover:scale-105 transition-all">
+             <a href={`${posUrl}/login?mode=register`} className="inline-flex items-center justify-center rounded-lg bg-accent px-8 py-4 text-lg font-bold text-white shadow-xl hover:bg-accent-hover hover:scale-105 transition-all">
                 Empieza gratis hoy
              </a>
            </div>
