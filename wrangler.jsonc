@@ -2,6 +2,7 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "landingpos",
   "compatibility_date": "2026-07-09",
+  "workers_dev": true,
   "assets": {
     "directory": "out"
   }
