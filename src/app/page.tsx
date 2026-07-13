@@ -24,9 +24,10 @@ import {
   AlertTriangle,
   ChevronDown
 } from 'lucide-react';
+import { ProbarPlataforma } from '@/components/probar-plataforma';
 
 export default function Home() {
-  const posUrl = process.env.NEXT_PUBLIC_POS_URL || 'https://sellalleswebsaas.loui-s.workers.dev';
+  const posUrl = process.env.NEXT_PUBLIC_POS_URL || 'https://app.sellalles.com';
 
   return (
     <div className="min-h-screen flex flex-col font-sans">
@@ -71,9 +72,7 @@ export default function Home() {
                   Crear cuenta gratis
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-                <Link href="#demo" className="inline-flex items-center justify-center rounded-lg border border-gray-200 bg-white px-6 py-3 text-base font-medium hover:bg-gray-50 transition-colors">
-                  Ver demo
-                </Link>
+                <ProbarPlataforma posUrl={posUrl} />
               </div>
               <div className="mt-8 flex items-center gap-4 text-sm text-gray-500 font-medium">
                 <span className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-green-500" /> Sin tarjeta de crédito</span>
