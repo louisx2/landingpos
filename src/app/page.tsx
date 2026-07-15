@@ -243,12 +243,17 @@ export default function Home() {
                 <h3 className="text-xl font-bold mb-2">Pro</h3>
                 <p className="text-gray-500 text-sm mb-6">Para negocios en crecimiento.</p>
                 <div className="mb-6">
-                  <span className="text-4xl font-bold">RD$ 1,900</span>
-                  <span className="text-gray-500">/mes</span>
+                  <div>
+                    <span className="text-4xl font-bold">RD$ 1,950</span>
+                    <span className="text-gray-500">/mes</span>
+                  </div>
+                  <p className="text-sm text-gray-500 mt-1">
+                    pagando 1 año · o <span className="font-medium text-gray-700">RD$ 2,300/mes</span> mes a mes
+                  </p>
                 </div>
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-center gap-3 text-sm">
-                    <CheckCircle2 className="h-4 w-4 text-primary shrink-0" /> 
+                    <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
                     <span>1 Sucursal <span className="text-gray-400 text-xs ml-1">(pago extra por adicionales)</span></span>
                   </li>
                   <li className="flex items-center gap-3 text-sm"><CheckCircle2 className="h-4 w-4 text-primary" /> 10 Usuarios</li>

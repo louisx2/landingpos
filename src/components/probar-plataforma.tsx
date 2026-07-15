@@ -29,6 +29,8 @@ export function ProbarPlataforma({ posUrl }: { posUrl: string }) {
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<DemoResult | null>(null);
   const [copied, setCopied] = useState<'email' | 'password' | null>(null);
+  const [entering, setEntering] = useState(false);
+  const [enterError, setEnterError] = useState<string | null>(null);
   const widgetRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -78,6 +80,34 @@ export function ProbarPlataforma({ posUrl }: { posUrl: string }) {
     navigator.clipboard.writeText(value);
     setCopied(field);
     setTimeout(() => setCopied(null), 1500);
+  };
+
+  // Inicia sesión con las credenciales de la demo y entra directo al POS.
+  // Obtenemos la sesión vía el endpoint de auth de Supabase y la pasamos a
+  // app.sellalles.com en el hash de la URL (los tokens no viajan al servidor);
+  // el login del POS la detecta y redirige al dashboard.
+  const enterDemo = async () => {
+    if (!result || !SUPABASE_URL || !SUPABASE_ANON_KEY) return;
+    setEntering(true);
+    setEnterError(null);
+    try {
+      const resp = await fetch(`${SUPABASE_URL}/auth/v1/token?grant_type=password`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', apikey: SUPABASE_ANON_KEY },
+        body: JSON.stringify({ email: result.email, password: result.password }),
+      });
+      const data = await resp.json();
+      if (!resp.ok || !data?.access_token || !data?.refresh_token) {
+        setEnterError('No se pudo entrar automáticamente. Usa las credenciales para iniciar sesión.');
+        return;
+      }
+      const hash = `access_token=${encodeURIComponent(data.access_token)}&refresh_token=${encodeURIComponent(data.refresh_token)}`;
+      window.location.href = `${posUrl}/login#${hash}`;
+    } catch {
+      setEnterError('No se pudo entrar automáticamente. Usa las credenciales para iniciar sesión.');
+    } finally {
+      setEntering(false);
+    }
   };
 
   const expiresLabel = result
@@ -159,11 +189,20 @@ export function ProbarPlataforma({ posUrl }: { posUrl: string }) {
                     </button>
                   </div>
                 </div>
+                <button
+                  onClick={enterDemo}
+                  disabled={entering}
+                  className="w-full inline-flex items-center justify-center rounded-lg bg-accent px-6 py-3 text-base font-medium text-white shadow hover:bg-accent-hover transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {entering && <Loader2 className="mr-2 h-5 w-5 animate-spin" />}
+                  Entrar a la demo
+                </button>
+                {enterError && <p className="mt-2 text-sm text-red-600">{enterError}</p>}
                 <a
                   href={`${posUrl}/login`}
-                  className="block w-full text-center rounded-lg bg-accent px-6 py-3 text-base font-medium text-white shadow hover:bg-accent-hover transition-colors"
+                  className="mt-3 block text-center text-sm text-gray-500 underline underline-offset-2 hover:text-gray-700"
                 >
-                  Iniciar sesión
+                  o inicia sesión manualmente
                 </a>
               </>
             )}
