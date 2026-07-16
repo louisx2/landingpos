@@ -45,11 +45,11 @@ export default function Home() {
             <Link href="#faq" className="hover:text-primary transition-colors">Preguntas</Link>
           </nav>
 
-          <div className="flex items-center gap-4">
-            <a href={`${posUrl}/login`} className="hidden sm:inline-flex text-sm font-medium hover:text-primary transition-colors">
+          <div className="flex items-center gap-2 sm:gap-4">
+            <a href={`${posUrl}/login`} className="inline-flex text-xs sm:text-sm font-medium hover:text-primary transition-colors whitespace-nowrap">
               Iniciar sesión
             </a>
-            <a href={`${posUrl}/login?mode=register`} className="inline-flex items-center justify-center rounded-md bg-accent px-4 py-2 text-sm font-medium text-white shadow hover:bg-accent-hover transition-colors">
+            <a href={`${posUrl}/login?mode=register`} className="inline-flex items-center justify-center rounded-md bg-accent px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium text-white shadow hover:bg-accent-hover transition-colors whitespace-nowrap">
               Crear cuenta gratis
             </a>
           </div>
