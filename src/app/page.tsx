@@ -25,6 +25,7 @@ import {
   ChevronDown
 } from 'lucide-react';
 import { ProbarPlataforma } from '@/components/probar-plataforma';
+import { WhatsAppLink } from '@/components/whatsapp-link';
 
 export default function Home() {
   const posUrl = process.env.NEXT_PUBLIC_POS_URL || 'https://app.sellalles.com';
@@ -279,9 +280,12 @@ export default function Home() {
                   <li className="flex items-center gap-3 text-sm"><CheckCircle2 className="h-4 w-4 text-primary" /> Facturación Electrónica (e-CF)</li>
                   <li className="flex items-center gap-3 text-sm"><CheckCircle2 className="h-4 w-4 text-primary" /> Soporte prioritario</li>
                 </ul>
-                <a href="https://wa.me/18299333226?text=Hola,%20me%20interesa%20cotizar%20el%20plan%20Empresarial%20de%20SellAlleS" target="_blank" rel="noopener noreferrer" className="block w-full py-2.5 px-4 rounded-lg bg-yellow-400 text-yellow-950 font-semibold text-center hover:bg-yellow-500 transition-colors shadow-md">
+                <WhatsAppLink
+                  message="Hola, me interesa cotizar el plan Empresarial de SellAlleS"
+                  className="block w-full py-2.5 px-4 rounded-lg bg-yellow-400 text-yellow-950 font-semibold text-center hover:bg-yellow-500 transition-colors shadow-md"
+                >
                   Cotizar
-                </a>
+                </WhatsAppLink>
               </div>
             </div>
           </div>
