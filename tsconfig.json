@@ -30,5 +30,8 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": ["node_modules"]
+  // El worker corre en Cloudflare, no en Next: usa tipos del runtime de Workers
+  // (Fetcher, el export default con fetch) que no existen en esta configuracion.
+  // Lo comprueba y lo empaqueta wrangler al desplegar.
+  "exclude": ["node_modules", "worker"]
 }

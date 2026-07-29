@@ -3,7 +3,12 @@
   "name": "sellalles-landing",
   "compatibility_date": "2026-07-09",
   "workers_dev": true,
+  // El worker existe solo para atender /<empresa>/c/<codigo>, los enlaces de
+  // comprobantes que el POS manda por WhatsApp. Todo lo demas lo sirve ASSETS
+  // igual que antes, sin pasar por codigo.
+  "main": "worker/index.ts",
   "assets": {
-    "directory": "out"
+    "directory": "out",
+    "binding": "ASSETS"
   }
 }
