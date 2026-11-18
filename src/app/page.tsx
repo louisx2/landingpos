@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { 
-  Store, 
   BarChart3, 
   CreditCard, 
   Package, 
@@ -26,6 +25,7 @@ import {
 } from 'lucide-react';
 import { ProbarPlataforma } from '@/components/probar-plataforma';
 import { WhatsAppLink } from '@/components/whatsapp-link';
+import { StoreLogo } from '@/components/store-logo';
 
 export default function Home() {
   const posUrl = process.env.NEXT_PUBLIC_POS_URL || 'https://app.sellalles.com';
@@ -36,7 +36,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Store className="h-6 w-6 text-primary" />
+            <StoreLogo className="h-6 w-6 text-primary" />
             <span className="text-xl font-bold tracking-tight">SellAlleS</span>
           </div>
           
@@ -98,7 +98,7 @@ export default function Home() {
           <div className="container mx-auto px-4 text-center">
             <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-6">Hecho para negocios dominicanos</p>
             <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-60 grayscale">
-               <Store className="h-8 w-8" />
+               <StoreLogo className="h-8 w-8" />
                <Building2 className="h-8 w-8" />
                <Package className="h-8 w-8" />
                <Users className="h-8 w-8" />
@@ -116,7 +116,7 @@ export default function Home() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
-                { icon: Store, title: "POS rápido y ágil", desc: "Búsqueda por nombre o código de barras. Maneja varios carritos simultáneamente sin perder la venta." },
+                { icon: StoreLogo, title: "POS rápido y ágil", desc: "Búsqueda por nombre o código de barras. Maneja varios carritos simultáneamente sin perder la venta." },
                 { icon: Package, title: "Inventario por sucursal", desc: "Controla tu stock en tiempo real. Traslada mercancía entre sucursales fácilmente." },
                 { icon: CreditCard, title: "Crédito y financiamiento", desc: "Crea planes de pago con cuotas e intereses. Lleva el control de tus cuentas por cobrar." },
                 { icon: BarChart3, title: "Reportes claros", desc: "Ventas por día, por sucursal, por producto y por vendedor. Toma decisiones con datos." },
@@ -337,7 +337,7 @@ export default function Home() {
         <div className="container mx-auto px-4 grid md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <Store className="h-6 w-6 text-primary" />
+              <StoreLogo className="h-6 w-6 text-primary" />
               <span className="text-xl font-bold">SellAlleS</span>
             </div>
             <p className="text-gray-500 text-sm max-w-xs mb-6">
